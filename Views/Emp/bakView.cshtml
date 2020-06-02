@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "bakView";
+}
+
+<h2>Create Employee Page</h2>
+
+@using (Html.BeginForm("CreateE", "Emp", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.LabelFor(m => m.EmpFName, new { @class = "col-md-2 control-label" })
+    @Html.TextBoxFor(m => m.EmpFName, new { @class = "form-control" })
+    @Html.LabelFor(m => m.EmpLName, new { @class = "col-md-2 control-label" })
+    @Html.TextBoxFor(m => m.EmpLName, new { @class = "form-control" })
+    @Html.LabelFor(m => m.EmpID, new { @class = "col-md-2 control-label" })
+    @Html.TextBoxFor(m => m.EmpID, new { @class = "form-control" })
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Create" class="btn btn-default" />
+    </div>
+}
